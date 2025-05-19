@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning & Study Hub with Shinchan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="https://cdn.pixabay.com/video/2018/11/01/19045-298313358_large.mp4" type="video/mp4">
+    </video>
+    
+    <div class="container">
+        <!-- Home Page Section -->
+        <div id="home-section" class="section">
+            <div class="home-content">
+                <div class="shinchan-avatar">
+                    <img src="images/shinchan.png" alt="Shinchan">
+                </div>
+                <h1>Welcome to Learning Hub!</h1>
+                <p class="intro-text">Your one-stop platform for managing all your learning resources. 
+                Organize courses, take notes, and track your progress with our fun Shinchan-themed interface!</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Course Management</h3>
+                        <p>Organize all your courses in one place</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-sticky-note"></i>
+                        <h3>Study Notes</h3>
+                        <p>Save and organize your study materials</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Smart Bookmarks</h3>
+                        <p>Never lose important information</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your learning journey</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Study Assistant</h3>
+                        <p>Get instant help with your studies using our AI chatbot</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bell"></i>
+                        <h3>Study Reminders</h3>
+                        <p>Set up automated reminders for your study sessions</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Pomodoro Timer</h3>
+                        <p>Stay focused with our built-in study timer</p>
+                        <span class="login-to-access">Login to Access</span>
+                    </div>
+                </div>
+
+                <div class="auth-buttons">
+                    <button class="btn-primary" id="get-started-btn">Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auth Section -->
+        <div class="section" id="auth-section">
+            <div class="auth-container">
+                <div class="shinchan-avatar">
+                    <img src="images/avatar.jpeg" alt="Avatar">
+                </div>
+                <h2>Welcome Back!</h2>
+                <div class="auth-forms">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit">Login</button>
+                        <p class="toggle-form">Don't have an account? <a href="#" id="show-register">Register</a></p>
+                    </form>
+                    
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-username">Username</label>
+                            <input type="text" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit">Register</button>
+                        <p class="toggle-form">Already have an account? <a href="#" id="show-login">Login</a></p>
+                    </form>
+                </div>
+                <button id="back-to-home" class="btn-back">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section hidden">
+            <div class="sidebar">
+                <div class="user-profile">
+                    <img src="images/avatar.jpeg" alt="User Avatar" class="avatar">
+                    <h3 class="user-name">Welcome, <span id="display-username">User</span></h3>
+                </div>
+                <ul class="nav-links">
+                    <li class="active" data-section="dashboard-content">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li data-section="courses-content">
+                        <i class="fas fa-book"></i>
+                        <span>Courses</span>
+                    </li>
+                    <li data-section="notes-content">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Notes</span>
+                    </li>
+                    <li data-section="bookmarks-content">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Bookmarks</span>
+                    </li>
+                    <li data-section="ai-assistant-content">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Assistant</span>
+                    </li>
+                    <li data-section="reminders-content">
+                        <i class="fas fa-bell"></i>
+                        <span>Reminders</span>
+                    </li>
+                    <li data-section="pomodoro-content">
+                        <i class="fas fa-clock"></i>
+                        <span>Pomodoro</span>
+                    </li>
+                    <li data-section="study-groups-content">
+                        <i class="fas fa-users"></i>
+                        <span>Study Groups</span>
+                    </li>
+                    <li data-section="settings-content">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                    <li data-section="platforms-content">
+                        <i class="fas fa-globe"></i>
+                        <span>Quick Access</span>
+                    </li>
+                    <li class="logout" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="main-content">
+                <!-- Dashboard Home Section -->
+                <div id="dashboard-content" class="dashboard-content active">
+                    <div class="top-bar">
+                        <h2>Dashboard Overview</h2>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="stats-card">
+                            <i class="fas fa-book"></i>
+                            <h3>Total Courses</h3>
+                            <p class="count">0</p>
+                        </div>
+                        <div class="stats-card">
+                            <i class="fas fa-sticky-note"></i>
+                            <h3>Total Notes</h3>
+                            <p class="count">0</p>
+                        </div>
+                        <div class="stats-card">
+                            <i class="fas fa-bookmark"></i>
+                            <h3>Bookmarks</h3>
+                            <p class="count">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Assistant Section -->
+                <div id="ai-assistant-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>AI Study Assistant</h2>
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message ai">
+                                Hello! I'm your AI study assistant. How can I help you today?
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="chat-input" placeholder="Ask your study-related question...">
+                            <button onclick="sendMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminders Section -->
+                <div id="reminders-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>Study Reminders</h2>
+                        <button class="btn-primary" onclick="openReminderModal()">
+                            <i class="fas fa-plus"></i> Set New Reminder
+                        </button>
+                    </div>
+                    <div class="reminders-list" id="reminders-list">
+                        <!-- Reminders will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Pomodoro Timer Section -->
+                <div id="pomodoro-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>Pomodoro Timer</h2>
+                    </div>
+                    <div class="timer-container">
+                        <div class="timer-display">
+                            <span id="hours">00</span>:<span id="minutes">25</span>:<span id="seconds">00</span>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="btn-primary" onclick="startTimer()">
+                                <i class="fas fa-play"></i> Start
+                            </button>
+                            <button class="btn-secondary" onclick="pauseTimer()" style="display: none;">
+                                <i class="fas fa-pause"></i> Pause
+                            </button>
+                            <button class="btn-secondary" onclick="resetTimer()">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                        <div class="timer-settings">
+                            <div class="form-group">
+                                <label>Study Duration (minutes)</label>
+                                <input type="number" id="study-duration" value="25" min="1" max="120">
+                            </div>
+                            <div class="form-group">
+                                <label>Break Duration (minutes)</label>
+                                <input type="number" id="break-duration" value="5" min="1" max="30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Groups Section -->
+                <div id="study-groups-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>Study Groups</h2>
+                        <button class="btn-primary" onclick="openCreateGroupModal()">
+                            <i class="fas fa-plus"></i> Create New Group
+                        </button>
+                    </div>
+                    <div class="groups-container">
+                        <div class="groups-filters">
+                            <div class="search-box">
+                                <input type="text" id="groupSearch" placeholder="Search groups...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="filter-buttons">
+                                <button class="btn btn-outline active" data-filter="all">All Groups</button>
+                                <button class="btn btn-outline" data-filter="my-groups">My Groups</button>
+                                <button class="btn btn-outline" data-filter="public">Public</button>
+                            </div>
+                        </div>
+
+                        <div class="groups-grid" id="groupsList">
+                            <!-- Groups will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Section -->
+                <div id="courses-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>My Courses</h2>
+                        <div class="course-filters">
+                            <select id="filter-category" class="filter-select">
+                                <option value="">All Categories</option>
+                                <option value="Programming">Programming</option>
+                                <option value="Design">Design</option>
+                                <option value="Business">Business</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="AI/ML">AI/ML</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <select id="filter-status" class="filter-select">
+                                <option value="">All Status</option>
+                                <option value="To Start">To Start</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                            <select id="filter-priority" class="filter-select">
+                                <option value="">All Priorities</option>
+                                <option value="High">High Priority</option>
+                                <option value="Medium">Medium Priority</option>
+                                <option value="Low">Low Priority</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="add-course-btn">
+                            <i class="fas fa-plus"></i> Add Course
+                        </button>
+                    </div>
+                    <div id="courses-list" class="courses-grid">
+                        <!-- Courses will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div id="notes-content" class="dashboard-content hidden">
+                    <div class="section-header">
+                        <h2>My Notes</h2>
+                        <button id="add-note-btn" class="btn-primary">
+                            <i class="fas fa-plus"></i> Add Note
+                        </button>
+                    </div>
+
+                    <div class="notes-filters">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="notes-search" placeholder="Search notes...">
+                        </div>
+                        <select id="notes-category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="lecture">Lecture Notes</option>
+                            <option value="assignment">Assignments</option>
+                            <option value="project">Projects</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="notes-container">
+                        <div id="notes-list" class="notes-grid"></div>
+                    </div>
+                </section>
+
+                <!-- Bookmarks Section -->
+                <div id="bookmarks-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>My Bookmarks</h2>
+                    </div>
+                    <div id="bookmarks-list" class="bookmarks-grid">
+                        <!-- Bookmarks will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="update-username">Username</label>
+                            <input type="text" id="update-username">
+                        </div>
+                        <div class="form-group">
+                            <label for="update-email">Email</label>
+                            <input type="email" id="update-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="update-password">New Password</label>
+                            <input type="password" id="update-password">
+                        </div>
+                        <button class="btn-primary" id="save-settings-btn">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Platforms Section -->
+                <div id="platforms-content" class="dashboard-content hidden">
+                    <div class="top-bar">
+                        <h2>Quick Access Platforms</h2>
+                        <div class="platform-filters">
+                            <button class="btn-filter active" data-category="all">All</button>
+                            <button class="btn-filter" data-category="coding">Coding</button>
+                            <button class="btn-filter" data-category="professional">Professional</button>
+                            <button class="btn-filter" data-category="learning">Learning</button>
+                            <button class="btn-filter" data-category="documentation">Documentation</button>
+                            <button class="btn-filter" data-category="ai_tools">AI Tools</button>
+                            <button class="btn-filter" data-category="favorites">Favorites</button>
+                        </div>
+                    </div>
+
+                    <div class="platforms-grid" id="platformsGrid">
+                        <!-- Platforms will be dynamically loaded here -->
+                    </div>
+
+                    <div class="contests-section">
+                        <h3>Upcoming Coding Contests</h3>
+                        <div class="contests-grid" id="contestsGrid">
+                            <!-- Contests will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reminder Modal -->
+            <div id="reminder-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Set Study Reminder</h3>
+                        <button class="close" onclick="closeReminderModal()">&times;</button>
+                    </div>
+                    <form id="reminder-form">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date & Time</label>
+                            <input type="datetime-local" name="datetime" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="closeReminderModal()">Cancel</button>
+                            <button type="submit" class="btn-primary">Set Reminder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Add Course Modal -->
+            <div id="add-course-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add New Course</h3>
+                        <button class="close">&times;</button>
+                    </div>
+                    <form id="add-course-form">
+                        <div class="form-group">
+                            <label for="course-name">Course Name</label>
+                            <input type="text" id="course-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-description">Description</label>
+                            <textarea id="course-description" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-platform">Platform</label>
+                            <select id="course-platform" name="platform">
+                                <option value="Coursera">Coursera</option>
+                                <option value="Udemy">Udemy</option>
+                                <option value="edX">edX</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-link">Course Link</label>
+                            <input type="url" id="course-link" name="link" placeholder="https://...">
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary close">Cancel</button>
+                            <button type="submit" class="btn-primary">Add Course</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Note Modal -->
+    <div id="add-note-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Note</h3>
+                <button class="close">&times;</button>
+            </div>
+            <form id="add-note-form" onsubmit="saveNote(event)">
+                <div class="form-group">
+                    <label for="note-title">Title</label>
+                    <input type="text" id="note-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="note-content">Content</label>
+                    <textarea id="note-content" name="content" rows="6"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="note-category">Category</label>
+                    <select id="note-category" name="category" required>
+                        <option value="lecture">Lecture Notes</option>
+                        <option value="assignment">Assignments</option>
+                        <option value="project">Projects</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="note-tags">Tags (comma-separated)</label>
+                    <input type="text" id="note-tags" name="tags" placeholder="e.g., math, physics, important">
+                </div>
+
+                <div class="form-group">
+                    <label>Attachments</label>
+                    <div class="file-upload-container">
+                        <div class="file-upload" id="pdf-upload">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Drop PDF files here or click to upload</p>
+                            <input type="file" name="pdf" accept=".pdf" multiple>
+                        </div>
+                        <div class="file-upload" id="image-upload">
+                            <i class="fas fa-image"></i>
+                            <p>Drop images here or click to upload</p>
+                            <input type="file" name="images" accept="image/*" multiple>
+                        </div>
+                    </div>
+                    <div id="upload-preview" class="upload-preview"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeNoteModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Group Modal -->
+    <div id="createGroupModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Study Group</h3>
+                <button class="close-btn" onclick="closeCreateGroupModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="createGroupForm">
+                    <div class="form-group">
+                        <label for="groupName">Group Name</label>
+                        <input type="text" id="groupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="groupDescription">Description</label>
+                        <textarea id="groupDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="groupVisibility">Visibility</label>
+                        <select id="groupVisibility">
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="groupTags">Tags (comma-separated)</label>
+                        <input type="text" id="groupTags" placeholder="e.g., math, physics, chemistry">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Group</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Group Discussion Modal -->
+    <div id="groupDiscussionModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="groupDiscussionTitle">Group Discussion</h3>
+                <button class="close-btn" onclick="closeGroupDiscussionModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="discussion-container">
+                    <div class="discussion-messages" id="discussionMessages">
+                        <!-- Messages will be dynamically loaded here -->
+                    </div>
+                    <div class="discussion-input">
+                        <form id="messageForm">
+                            <textarea id="messageInput" placeholder="Type your message..."></textarea>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
