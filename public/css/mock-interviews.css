@@ -1,0 +1,148 @@
+.categories {
+    margin: 2rem 0;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.category-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #2196F3;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-buttons button:hover {
+    background: #1976D2;
+}
+
+.category-buttons button.active {
+    background: #0D47A1;
+}
+
+.difficulty-filter {
+    margin: 2rem 0;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.difficulty-buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #2196F3;
+    background: white;
+    color: #2196F3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.difficulty-buttons button:hover {
+    background: #E3F2FD;
+}
+
+.difficulty-buttons button.active {
+    background: #2196F3;
+    color: white;
+}
+
+.questions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.question-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.question-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.question-card .difficulty {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.question-card .difficulty.easy {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.question-card .difficulty.medium {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.question-card .difficulty.hard {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+.question-card .answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.question-card .tips {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.question-card .tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.question-card .tips li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.question-card .tips li:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+}
+
+.language-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.language-toggle button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #2196F3;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle button:hover {
+    background: #1976D2;
+} 
