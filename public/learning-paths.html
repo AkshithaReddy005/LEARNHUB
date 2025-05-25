@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths - Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/learning-paths.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Learning Paths</h1>
+            <div class="language-toggle">
+                <button id="languageToggle">English</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="learning-paths-grid">
+                <!-- Learning path cards will be dynamically inserted here -->
+            </div>
+        </main>
+
+        <div id="pathModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="pathTitle"></h2>
+                <div class="path-content">
+                    <div class="roadmap">
+                        <h3>Roadmap</h3>
+                        <ul id="roadmapList"></ul>
+                    </div>
+                    <div class="resources">
+                        <h3>Resources</h3>
+                        <div id="resourcesList"></div>
+                    </div>
+                    <div class="practice-sites">
+                        <h3>Practice Sites</h3>
+                        <div id="practiceSitesList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/learning-paths.js"></script>
+</body>
+</html> 
